@@ -106,49 +106,6 @@ class PaymentLink extends BaseController{
 		}else{
 			$typeCorrespondient = 'Tarjeta de credito o debito';
 		}
-
-		echo '{
-		  "messagetype" : 90,
-		  "posEntryMode" : 6,
-		  "amount": '.$_POST['propinaHide'].',
-		  "otherAmount": '.$_POST['propinaMonto'].',
-		  "user" :"'.$_POST['emailPer'].'",
-		  "currency": "484",
-		  "reference_payment": "'.$reference_pay.'",
-      	  "sirioId": "'.$_POST['sirioId'].'",
-		  "orderingAccount": "'.$_POST['orderingAccount'].'",
-		  "payment_type" :1,
-		  "paymentMethod": '.$paymentMethod.',
-		  "typeCorrespondient": "'.$typeCorrespondient.'", 
-		  "retrievalReferenceCode": "'.$reference.'",
-		  "customerInfo": {
-		    "firstName":  "'.$fname.'",
-		    "lastName":  "'.$lname.'",
-		    "middleName": "test",
-		    "email":  "'.$email.'",
-		    "phone1":  "'.$telCard.'",
-		    "city":  "'.$ciudad.'",
-		    "address1":  "'.$address.'",
-		    "postalCode":  "'.$cp.'",
-		    "state":  "'.$estado.'",
-		    "country":  "'.$pais.'",
-		    "ip": "'.$ip.'"
-		  },
-		  "cardData": {
-		    "cardNumber": "'.$numCard.'",
-		    "cvv": "'.$ccv.'",
-		    "cardholderName": "'.$nameCard.'",
-		    "expirationYear": "'.$yy.'",
-		    "expirationMonth": "'.$mm.'"
-		  },
-		  "itInformation": {
-		    "so": "Android||Edge||IOS||Chrome",
-		    "fab": "Xiaomi",
-		    "model" : "MI 8 Lite||VersionNavegador",
-		    "latitude": "'.$lat.'",
-		    "longitude": "'.$lon.'"
-		  }
-		}';
 		
 		$curl = curl_init();
 
