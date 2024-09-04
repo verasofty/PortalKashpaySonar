@@ -51,34 +51,6 @@ class AddLinkPago extends BaseController{
             //$urlImage = base_url().'uploads/comercio_default.png';            
         //}
 
-		echo '{
-			    "messageType" : 88,
-				"user" : "'.$_POST['email'].'",
-				"amount": '.$_POST['monto'].',   
-          		"retrievalReferenceCode": "'.date_timestamp_get($fecha).'",
-			    "currency": "484",
-				"sirioId" : "'.$_POST['entitySonID'].'",
-				"otherAmount" : 0.00,
-				"orderingAccount" : "'.$_POST['cuentaSession'].'",
-				"payment_type" :1,
-			    "customerInfo": {
-				    "firstName": "'.$_POST['nombre'].'",
-				    "lastName": "'.$_POST['apaterno'].'",
-				    "middleName": "'.$_POST['amaterno'].'",
-				    "email": "'.$_POST['email'].'",
-				    "phone1": "'.$_POST['tel'].'"   
-			    },
-				"payInfo": {
-					"unique": true,
-					"reference": "'.$_POST['referencia'].'",
-					"description": "'.$_POST['concepto'].'",
-					"response": true,
-					"expiration": "'.$_POST['fechaVig'].' '.$_POST['horario'].'",
-					"urlCallback": "'.$urlCallback.'",
-			    	"urlImage": "'.$urlImage.'"
-				}
-			}';
-
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
